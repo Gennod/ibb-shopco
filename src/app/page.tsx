@@ -1,9 +1,10 @@
-import { HeroSection } from '@/components/sections/Homepage'
+import { HeroSection, NoticeSection } from '@/components/sections/Homepage'
 
 export default function Home() {
 	return (
 		<>
 			<HeroSection />
+			<NoticeSection />
 		</>
 	)
 }

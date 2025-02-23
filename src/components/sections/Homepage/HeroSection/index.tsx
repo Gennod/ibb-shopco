@@ -20,7 +20,7 @@ const data: {
 
 export default function HeroSection() {
 	return (
-		<section className='flex justify-between full-width pb-28 pt-12 lg:pt-24'>
+		<section className='flex justify-between items-center full-width pb-28 pt-12 pl-5 pr-5 lg:pt-20 bg-slate-200'>
 			<div>
 				<h1 className='font-integral text-4xl leading-[2.125rem] text-black max-md:max-w-[22.5rem] md:text-5xl lg:text-[4rem] lg:leading-[4rem] uppercase font-black'>
 					Find stuff
