@@ -20,8 +20,10 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={`${inter.className} content-grid font-satoshi`}>
-				<Navbar />
-				{children}
+				<header className='content-grid fixed z-50 w-full bg-white border-b border-black/10'>
+					<Navbar />
+				</header>
+				<main className='pt-28 pl-5 pr-5 bg-slate-100'>{children}</main>
 			</body>
 		</html>
 	)
