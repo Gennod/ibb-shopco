@@ -21,9 +21,8 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={`${inter.className} font-satoshi`}>
-				<header className='text-black fixed z-50 w-full bg-white border-b border-black/10'>
-					<Navbar />
-				</header>
+				<Navbar />
+
 				<main className='pt-20'>{children}</main>
 				<CTASection />
 			</body>
