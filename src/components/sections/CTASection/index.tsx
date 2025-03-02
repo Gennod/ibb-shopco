@@ -5,8 +5,8 @@ import InputField from '@/components/ui-build/InputField'
 
 const CTASection = () => {
 	return (
-		<section className="pb-10 pl-16 pr-16 pt-10 text-white">
-			<div className="flex justify-between rounded-[1.5rem] bg-black p-7 max-lg:flex-col">
+		<section className="bg-slate-50 pb-10 pl-16 pr-16 pt-10 text-white">
+			<div className="relative z-20 -mb-32 flex justify-between rounded-[1.5rem] bg-black p-7 max-lg:flex-col">
 				<h2 className="font-integral -mt-0.5 max-w-[35rem] text-[2rem] font-black leading-[2.1875rem] text-white max-lg:mb-5 lg:text-[2.5rem] lg:leading-[2.8125rem]">
 					STAY UPTO DATE ABOUT <br />
 					OUR LATEST OFFERS

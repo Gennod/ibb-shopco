@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
 	return (
-		<div className="divide-y-2 divide-slate-300 bg-slate-200 px-6 py-10 text-black/60">
+		<div className="divide-y-2 divide-slate-300 bg-slate-200 px-6 pb-10 pt-32 text-black/60">
 			<div className="flex justify-between gap-24 py-5 max-md:flex-col">
 				<div className="flex flex-col gap-5">
 					<div className="font-integral my-auto text-2xl font-black text-black lg:mb-2 lg:text-[2rem]">
