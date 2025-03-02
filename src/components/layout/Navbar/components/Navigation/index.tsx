@@ -1,3 +1,6 @@
+import Link from 'next/link'
+import React from 'react'
+
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -5,11 +8,10 @@ import {
 	NavigationMenuLink,
 	NavigationMenuList,
 	NavigationMenuTrigger,
-	navigationMenuTriggerStyle,
+	navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu'
+
 import { cn } from '@/lib/utils'
-import Link from 'next/link'
-import React from 'react'
 
 const components: {
 	title: string
@@ -23,8 +25,8 @@ const components: {
 		categories: [
 			{ name: 'Shirts', href: '/categories/mens-shirts' },
 			{ name: 'Shoes', href: '/categories/mens-shoes' },
-			{ name: 'Watches', href: '/categories/mens-watches' },
-		],
+			{ name: 'Watches', href: '/categories/mens-watches' }
+		]
 	},
 	{
 		title: "Women's Fashion",
@@ -36,8 +38,8 @@ const components: {
 			{ name: 'Jewelry', href: '/categories/womens-jewellery' },
 			{ name: 'Shoes', href: '/categories/womens-shoes' },
 			{ name: 'Watches', href: '/categories/womens-watches' },
-			{ name: 'Tops', href: '/categories/tops' },
-		],
+			{ name: 'Tops', href: '/categories/tops' }
+		]
 	},
 	{
 		title: 'Electronics',
@@ -47,16 +49,16 @@ const components: {
 			{ name: 'Smartphones', href: '/categories/smartphones' },
 			{ name: 'Laptops', href: '/categories/laptops' },
 			{ name: 'Tablets', href: '/categories/tablets' },
-			{ name: 'Mobile Accessories', href: '/categories/mobile-accessories' },
-		],
+			{ name: 'Mobile Accessories', href: '/categories/mobile-accessories' }
+		]
 	},
 	{
 		title: 'Beauty & Care',
 		description: 'Find skincare products, fragrances, and beauty essentials.',
 		categories: [
 			{ name: 'Skin Care', href: '/categories/skin-care' },
-			{ name: 'Fragrances', href: '/categories/fragrances' },
-		],
+			{ name: 'Fragrances', href: '/categories/fragrances' }
+		]
 	},
 	{
 		title: 'Home & Living',
@@ -66,8 +68,8 @@ const components: {
 			{ name: 'Furniture', href: '/categories/furniture' },
 			{ name: 'Kitchen Accessories', href: '/categories/kitchen-accessories' },
 			{ name: 'Home Decoration', href: '/categories/home-decoration' },
-			{ name: 'Groceries', href: '/categories/groceries' },
-		],
+			{ name: 'Groceries', href: '/categories/groceries' }
+		]
 	},
 	{
 		title: 'Sports & Automotive',
@@ -76,9 +78,9 @@ const components: {
 			{ name: 'Sports Accessories', href: '/categories/sports-accessories' },
 			{ name: 'Sunglasses', href: '/categories/sunglasses' },
 			{ name: 'Motorcycle', href: '/categories/motorcycle' },
-			{ name: 'Vehicle', href: '/categories/vehicle' },
-		],
-	},
+			{ name: 'Vehicle', href: '/categories/vehicle' }
+		]
+	}
 ]
 
 interface NavigationProps {
@@ -88,13 +90,17 @@ interface NavigationProps {
 
 export const Navigation: React.FC<NavigationProps> = ({
 	className,
-	onClose,
+	onClose
 }) => {
 	return (
 		<NavigationMenu className={className}>
 			<NavigationMenuList>
 				<NavigationMenuItem onClick={onClose}>
-					<Link href='/shop' legacyBehavior passHref>
+					<Link
+						href="/shop"
+						legacyBehavior
+						passHref
+					>
 						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
 							shop
 						</NavigationMenuLink>
@@ -103,7 +109,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>categories</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className='no-scrollbar grid md:grid-cols-2 max-lg:max-h-[calc(100dvh-20rem)] min-w-[320px] gap-8 overflow-y-scroll md:min-w-[500px] lg:min-w-[600px] text-sm font-thin p-5'>
+						<ul className="no-scrollbar grid w-[320px] gap-8 overflow-y-scroll p-5 text-sm font-thin max-lg:max-h-[calc(100dvh-20rem)] md:min-w-[500px] md:grid-cols-2 lg:min-w-[600px]">
 							{components.map(item => (
 								<NavigationItem
 									key={item.title}
@@ -130,19 +136,23 @@ const NavigationItem = React.forwardRef<
 	return (
 		<li>
 			<NavigationMenuLink asChild>
-				<span ref={ref} className={cn('...', className)} {...props}>
-					<div className='text-sm font-medium leading-none'>{title}</div>
-					<p className='text-muted-foreground line-clamp-2 text-sm leading-snug'>
+				<span
+					ref={ref}
+					className={cn('...', className)}
+					{...props}
+				>
+					<div className="text-sm font-medium leading-none">{title}</div>
+					<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
 						{children}
 					</p>
 
 					{categories && (
-						<div className='mt-2 flex flex-wrap gap-x-2'>
+						<div className="mt-2 flex flex-wrap gap-x-2">
 							{categories.map(category => (
 								<Link
 									key={category.href}
 									href={category.href}
-									className='text-muted-foreground hover:text-primary border-r border-neutral-800 pr-2 text-sm uppercase italic last:border-none hover:underline'
+									className="border-r border-neutral-800 pr-2 text-sm uppercase italic text-muted-foreground last:border-none hover:text-primary hover:underline"
 								>
 									{category.name}
 								</Link>
